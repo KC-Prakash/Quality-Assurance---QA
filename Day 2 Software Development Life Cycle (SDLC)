@@ -1,78 +1,142 @@
 ## विषयसूची
 
 1. [SDLC परिचय](#१-sdlc-परिचय)
-2. [SDLC का ६ मुख्य चरण](#२-sdlc-का-६-मुख्य-चरण)
+2. [SDLC का चरणहरू](#२-sdlc-का-चरणहरू)
 3. [SDLC को सामान्य प्रक्रिया](#३-sdlc-को-सामान्य-प्रक्रिया)
 4. [SDLC Models र Methodologies](#४-sdlc-models-र-methodologies)
-5. [तुलना र सही छनोट](#५-तुलना-र-सही-छनोट)
+5. [Model/Approach तुलना र छनोट](#५-modelapproach-तुलना-र-छनोट)
 6. [QA विकासपछि मात्र किन सुरु गर्नु हुँदैन?](#६-qa-विकासपछि-मात्र-किन-सुरु-गर्नु-हुँदैन)
 7. [QA, QC र Testing बीचको फरक](#७-qa-qc-र-testing-बीचको-फरक)
 8. [Shift-Left, Continuous र Shift-Right Testing](#८-shift-left-continuous-र-shift-right-testing)
-9. [Requirement लेख्ने उदाहरण: Password Reset](#९-requirement-लेख्ने-उदाहरण-password-reset)
+9. [Requirement र Acceptance Criteria को उदाहरण](#९-requirement-र-acceptance-criteria-को-उदाहरण)
 10. [Test Levels र Test Types](#१०-test-levels-र-test-types)
 11. [MERN Project मा SDLC र QA](#११-mern-project-मा-sdlc-र-qa)
 12. [Quality Gates र Definition of Done](#१२-quality-gates-र-definition-of-done)
-13. [आम गल्ती र राम्रो अभ्यास](#१३-आम-गल्ती-र-राम्रो-अभ्यास)
+13. [सामान्य गल्ती र राम्रो अभ्यास](#१३-सामान्य-गल्ती-र-राम्रो-अभ्यास)
 14. [शब्दावली](#१४-शब्दावली)
 15. [अभ्यास प्रश्न र उत्तर](#१५-अभ्यास-प्रश्न-र-उत्तर)
 16. [छोटो पुनरावलोकन](#१६-छोटो-पुनरावलोकन)
+17. [थप अध्ययनका स्रोत](#१७-थप-अध्ययनका-स्रोत)
 
 ---
 
 ## १. SDLC परिचय
 
-**Software Development Life Cycle (SDLC)** भनेको सफ्टवेयरलाई आवश्यकताअनुसार योजना बनाउने, डिजाइन गर्ने, विकास गर्ने, परीक्षण गर्ने, प्रयोगमा ल्याउने र निरन्तर सुधार गर्ने व्यवस्थित प्रक्रिया हो। यसको उद्देश्य प्रयोगकर्ताको आवश्यकता पूरा गर्ने **गुणस्तरीय, सुरक्षित, भरपर्दो र मर्मत गर्न सजिलो** सफ्टवेयर निर्माण गर्नु हो।
+### १.१ SDLC भनेको के हो?
 
-### SDLC किन आवश्यक छ?
-- आवश्यकता स्पष्ट बनाउन र गलत बुझाइ घटाउन।
-- Scope, समय, बजेट र जिम्मेवारी व्यवस्थित गर्न।
-- त्रुटि र सुरक्षा जोखिम चाँडै पत्ता लगाउन।
-- विकास टोलीबीच सहकार्य र कागजात व्यवस्थापन गर्न।
-- परीक्षण, release र maintenance लाई व्यवस्थित बनाउन।
+**Software Development Life Cycle (SDLC)** भनेको सफ्टवेयरलाई योजना बनाउने, आवश्यकताहरू बुझ्ने, डिजाइन गर्ने, विकास गर्ने, परीक्षण गर्ने, प्रयोगमा ल्याउने र निरन्तर सुधार गर्ने व्यवस्थित प्रक्रिया हो। यसको उद्देश्य प्रयोगकर्ताको आवश्यकता पूरा गर्ने, सुरक्षित, भरपर्दो, गुणस्तरीय र मर्मत गर्न सजिलो सफ्टवेयर निर्माण गर्नु हो।
 
-### मुख्य भिन्नता
-- **SDLC Phases** ले परियोजनामा *के-कस्ता काम हुन्छन्* बताउँछन्।
-- **Models/Methodologies** ले ती काम *कुन क्रममा र कसरी व्यवस्थित हुन्छन्* बताउँछन्।
-- **QA (Quality Assurance)** ले गुणस्तर सुनिश्चित गर्ने प्रक्रिया र अभ्यासमा ध्यान दिन्छ।
-- **Testing** ले परीक्षण गर्न मिल्ने सामग्री वा प्रणालीको व्यवहार जाँचेर त्रुटि/असफलता पत्ता लगाउँछ।
+SDLC ले परियोजनामा के-कस्ता काम गर्नुपर्छ, ती काम कसरी व्यवस्थापन गर्ने, जिम्मेवारी कसको हुन्छ र काम पूरा भएको कसरी जाँच्ने भन्ने विषय व्यवस्थित गर्न मद्दत गर्छ।
 
-## २. SDLC का ६ मुख्य चरण
+> **महत्त्वपूर्ण:** SDLC का चरणहरूको संख्या र नाम पुस्तक, संस्था वा प्रयोग गरिएको प्रक्रियाअनुसार फरक हुन सक्छ। यस नोटमा अध्ययनका लागि Planning सहितको सामान्य प्रक्रिया र पछि प्रचलित ६ चरणको वर्गीकरण दुवैको व्याख्या गरिएको छ।
 
-### २.१ Requirement Analysis — आवश्यकता विश्लेषण
-प्रयोगकर्ता र संस्थालाई के चाहिन्छ भनेर पत्ता लगाई आवश्यकता स्पष्ट र परीक्षण गर्न मिल्ने रूपमा लेखिन्छ।
+### १.२ SDLC किन आवश्यक छ?
+
+- प्रयोगकर्ता र संस्थाको आवश्यकता स्पष्ट बनाउन।
+- परियोजनाको Scope, समय, बजेट र जिम्मेवारी व्यवस्थित गर्न।
+- गलत बुझाइ र अनावश्यक पुनःकाम (Rework) घटाउन।
+- सुरक्षा, गुणस्तर र प्रयोगयोग्यता सुरुदेखि विचार गर्न।
+- Development, Testing र Deployment को काम व्यवस्थित गर्न।
+- जोखिम र त्रुटि चाँडै पहिचान गर्न।
+- सफ्टवेयरको maintenance तथा आगामी सुधार सजिलो बनाउन।
+
+### १.३ मुख्य अवधारणाबीचको भिन्नता
+
+- **SDLC Phases:** परियोजनामा कुन-कुन प्रकारका काम हुन्छन् भन्ने देखाउँछन्।
+- **SDLC Models/Approaches:** ती काम कुन क्रममा वा कुन तरिकाले व्यवस्थित गरिन्छन् भन्ने बताउँछन्।
+- **QA (Quality Assurance):** गुणस्तर कायम राख्न आवश्यक प्रक्रिया र अभ्यासमा ध्यान दिन्छ।
+- **QC (Quality Control):** उत्पादन वा deliverable को गुणस्तर जाँच्ने गतिविधि हो।
+- **Software Testing:** सफ्टवेयरको व्यवहार जाँचेर त्रुटि पत्ता लगाउने र आवश्यकतासँग मेल खान्छ कि खाँदैन भन्ने प्रमाण जुटाउने गतिविधि हो।
+
+### १.४ SDLC को सामान्य चरण
+
+अध्ययनका लागि एउटा सामान्य वर्गीकरण:
+
+1. Requirement Analysis — आवश्यकता विश्लेषण
+2. Design — डिजाइन
+3. Development — विकास
+4. Testing — परीक्षण
+5. Deployment — प्रयोगमा ल्याउने
+6. Maintenance — मर्मत तथा सुधार
+
+कतिपय प्रक्रियामा **Planning** छुट्टै चरण हुन्छ। Planning लाई Requirement Analysis सँगै वा परियोजनाभरि चल्ने गतिविधिका रूपमा पनि व्यवस्थित गर्न सकिन्छ।
+
+---
+
+## २. SDLC का चरणहरू
+
+### २.१ Planning — योजना निर्माण
+
+परियोजना किन बनाउने, के परिणाम चाहिन्छ, कति समय/बजेट लाग्छ र सम्भावित जोखिम के हुन् भन्ने प्रारम्भिक योजना बनाइन्छ।
+
+**मुख्य काम:**
+- समस्या र परियोजनाको उद्देश्य परिभाषित गर्ने।
+- प्रारम्भिक Scope र अपेक्षित परिणाम तय गर्ने।
+- बजेट, समय, टोली र आवश्यक स्रोत अनुमान गर्ने।
+- प्राविधिक सम्भाव्यता (Feasibility) जाँच्ने।
+- प्रमुख जोखिम र निर्भरता पहिचान गर्ने।
+- प्रारम्भिक Project Plan र जिम्मेवारी तय गर्ने।
+
+**उदाहरण:** नगरपालिकाले नागरिकलाई अनलाइन सिफारिस आवेदन दिन सक्ने पोर्टल बनाउने निर्णय गर्छ। सुरुमा बजेट, आवश्यक सेवा, प्रयोगकर्ता समूह, डेटा सुरक्षा र सञ्चालन जिम्मेवारीको मूल्याङ्कन गरिन्छ।
+
+**Deliverables:** Project Charter/Brief, feasibility notes, प्रारम्भिक schedule, risk list, scope statement।
+
+**QA को भूमिका:** उद्देश्य मापन गर्न सकिने छ कि छैन, गुणस्तरसम्बन्धी अपेक्षा छन् कि छैनन् र प्रमुख जोखिम छुटेका छन् कि छैनन् समीक्षा गर्ने।
+
+### २.२ Requirement Analysis — आवश्यकता विश्लेषण
+
+प्रयोगकर्ता र संस्थालाई के चाहिन्छ भन्ने पत्ता लगाई आवश्यकताहरू स्पष्ट, पूर्ण, प्राथमिकताबद्ध र परीक्षण गर्न मिल्ने रूपमा लेखिन्छ।
 
 **मुख्य काम:**
 - Stakeholders र प्रयोगकर्ताको आवश्यकता सङ्कलन गर्ने।
 - Functional र Non-functional requirements छुट्याउने।
-- Scope, प्राथमिकता, बजेट, समय र सीमाहरू निर्धारण गर्ने।
-- Acceptance Criteria र सम्भावित जोखिम पहिचान गर्ने।
-- आवश्यकता अस्पष्ट, विरोधाभासी वा अपूर्ण छ कि छैन समीक्षा गर्ने।
+- Scope, सीमा र प्राथमिकता तय गर्ने।
+- Acceptance Criteria बनाउने।
+- अपवाद अवस्था र सम्भावित जोखिम पहिचान गर्ने।
+- अस्पष्ट, अपूर्ण वा एकअर्कासँग विरोधाभास भएका requirement समीक्षा गर्ने।
 
-**Functional Requirement** ले प्रणालीले *के गर्नुपर्छ* बताउँछ। उदाहरण: नागरिकले अनलाइन सिफारिसका लागि आवेदन दिन सक्नुपर्छ।
+**Functional Requirement** ले प्रणालीले *के गर्नुपर्छ* बताउँछ।  
+उदाहरण: नागरिकले अनलाइन सिफारिसका लागि आवेदन दिन सक्नुपर्छ।
 
-**Non-functional Requirement** ले प्रणालीको *गुणस्तर वा सञ्चालनसम्बन्धी अपेक्षा* बताउँछ। उदाहरण: मोबाइलमा प्रयोग गर्न सजिलो हुनुपर्छ, संवेदनशील विवरण अनधिकृत व्यक्तिले हेर्न नपाउनुपर्छ र निर्धारित load मा प्रणाली स्वीकार्य गतिमा चल्नुपर्छ।
+**Non-functional Requirement** ले प्रणालीको गुणस्तर वा सञ्चालनसम्बन्धी अपेक्षा बताउँछ।  
+उदाहरण: मोबाइलमा प्रयोग गर्न सजिलो हुनुपर्छ; अनधिकृत प्रयोगकर्ताले संवेदनशील विवरण हेर्न नपाउनुपर्छ; निर्धारित load मा प्रतिक्रिया समय स्वीकार्य हुनुपर्छ।
 
-**नगरपालिका पोर्टलको उदाहरण:** अनलाइन सिफारिस, नागरिक लगइन, आवेदनको अवस्था हेर्ने र कर भुक्तानीसम्बन्धी सेवा उपलब्ध गराउने आवश्यकता पहिचान गर्ने।
+**नगरपालिका पोर्टलको उदाहरण:**
+- नागरिकले खाता खोल्न र लगइन गर्न सक्ने।
+- नागरिकले सिफारिस आवेदन भर्न र आवश्यक कागजात upload गर्न सक्ने।
+- नागरिकले आवेदनको अवस्था हेर्न सक्ने।
+- वडा कर्मचारीले आफूलाई अधिकार दिइएका अभिलेख मात्र हेर्न सक्ने।
 
-**QA को भूमिका:** Requirement review, अस्पष्टता पहिचान, acceptance criteria समीक्षा, testability जाँच र जोखिमको प्रारम्भिक विश्लेषण।
+**QA को भूमिका:** Requirement review, अस्पष्टता पहिचान, testability जाँच, acceptance criteria समीक्षा र प्रारम्भिक जोखिम विश्लेषण।
 
-### २.२ Design — डिजाइन
-आवश्यकता पूरा गर्न प्रणालीको संरचना र व्यवहार कसरी बनाउने भन्ने योजना तयार गरिन्छ।
+**Deliverables:** Requirement Specification, user stories, acceptance criteria, prioritized backlog, requirement traceability को प्रारम्भिक सूची।
+
+### २.३ Design — डिजाइन
+
+आवश्यकता पूरा गर्न प्रणालीको संरचना, प्रयोगकर्ता इन्टरफेस, डेटा र module हरू कसरी बनाउने भन्ने योजना तयार गरिन्छ।
 
 **मुख्य काम:**
 - UI/UX wireframe र prototype बनाउने।
-- System architecture र module boundaries निर्धारण गर्ने।
+- System architecture र module boundaries तय गर्ने।
 - Database schema र data relationships डिजाइन गर्ने।
-- API contract, data flow र error handling परिभाषित गर्ने।
-- Authentication, authorization, privacy र security controls योजना बनाउने।
-- Accessibility, responsive design र performance आवश्यकताहरू समेट्ने।
+- API contract, request/response र status codes परिभाषित गर्ने।
+- Authentication र authorization को व्यवस्था डिजाइन गर्ने।
+- Error handling, privacy र security controls योजना बनाउने।
+- Responsive layout, accessibility र performance आवश्यकता समेट्ने।
 
-**उदाहरण:** React frontend, Node.js/Express API र MongoDB database बीचको संरचना बनाउने; नागरिक, वडा कर्मचारी र प्रशासकका अधिकार छुट्याउने।
+**उदाहरण:** React frontend, Node.js/Express backend र MongoDB database बीचको संरचना बनाउने। नागरिक, वडा कर्मचारी र प्रशासकका अधिकार छुट्याउने।
 
-**QA को भूमिका:** Design review, usability/accessibility review, threat modeling, API/data contract review र test plan तयार गर्ने।
+**QA को भूमिका:**
+- UI/UX र accessibility review गर्ने।
+- API contract र data flow जाँच्ने।
+- Threat modeling र access-control design समीक्षा गर्ने।
+- Requirement अनुसार test plan तथा test scenarios तयार गर्न सुरु गर्ने।
 
-### २.३ Development — विकास
-स्वीकृत आवश्यकता र डिजाइनअनुसार code लेखेर सुविधा निर्माण गरिन्छ।
+**Deliverables:** Architecture diagram, UI/UX prototype, database model, API specification, permission matrix, design notes।
+
+### २.४ Development — विकास
+
+स्वीकृत आवश्यकता र डिजाइनअनुसार code लेखेर सफ्टवेयरका सुविधा निर्माण गरिन्छ।
 
 **मुख्य काम:**
 - Frontend, backend र database logic विकास गर्ने।
@@ -80,121 +144,174 @@
 - Git जस्ता Version Control System प्रयोग गर्ने।
 - Code review, linting र static analysis गर्ने।
 - Unit/component tests लेख्ने र चलाउने।
-- Password, API key वा token जस्ता secrets source code मा नराख्ने।
+- Secrets, password र API key source code मा नराख्ने।
+- आवश्यकता अनुसार documentation अद्यावधिक गर्ने।
 
-**उदाहरण:** नागरिक लगइन, सिफारिस फाराम, आवेदन सूची र प्रशासनिक dashboard विकास गर्ने।
+**उदाहरण:** नागरिक लगइन, सिफारिस फाराम, आवेदन सूची र प्रशासनिक dashboard निर्माण गर्ने।
 
-**QA को भूमिका:** Code review, automated tests, test data तयारी, API checks, defect logging र developer सँग छिटो feedback आदानप्रदान।
+**QA को भूमिका:**
+- Code review र testability मा सहयोग गर्ने।
+- Test data तयार गर्ने।
+- Unit, component र API tests चलाउन सहयोग गर्ने।
+- Defect लेख्ने र developer सँग छिटो feedback आदानप्रदान गर्ने।
+- केवल frontend मा नभई backend मा पनि validation र authorization लागू भएको जाँच्ने।
 
-### २.४ Testing — परीक्षण
-प्रणालीले आवश्यकता पूरा गर्छ कि गर्दैन, अपेक्षित परिणाम दिन्छ कि दिँदैन र जोखिम नियन्त्रणमा छन् कि छैनन् जाँचिन्छ।
+**Deliverables:** Source code, automated tests, code review records, updated technical documentation।
+
+### २.५ Testing — परीक्षण
+
+सफ्टवेयरले आवश्यकता पूरा गर्छ कि गर्दैन, अपेक्षित व्यवहार देखाउँछ कि देखाउँदैन र प्रमुख जोखिम नियन्त्रणमा छन् कि छैनन् जाँचिन्छ।
 
 **मुख्य काम:**
-- Unit, Integration, System र Acceptance testing गर्ने।
-- API, UI, database flow र role permissions जाँच्ने।
-- Regression, security, performance, accessibility र responsive checks आवश्यकताअनुसार गर्ने।
-- Bug/defect लेख्ने, प्राथमिकता दिने, fix verify गर्ने र सम्बन्धित परीक्षण पुनः चलाउने।
+- Unit, Component, Integration, System र Acceptance testing आवश्यकताअनुसार गर्ने।
+- API, UI, database flow र user permissions जाँच्ने।
+- Positive, negative, boundary र failure scenarios परीक्षण गर्ने।
+- आवश्यकताअनुसार regression, security, performance, accessibility र responsive checks गर्ने।
+- Defect रिपोर्ट गर्ने, fix verify गर्ने र सम्बन्धित परीक्षण पुनः चलाउने।
 
-**उदाहरण:** मोबाइलमा आवेदन फाराम ठीकसँग चल्छ कि चल्दैन, आवेदन database मा सुरक्षित हुन्छ कि हुँदैन र अनधिकृत प्रयोगकर्ताले प्रशासनिक पेज खोल्न सक्छ कि सक्दैन जाँच्ने।
+**उदाहरण:**
+- मोबाइलमा आवेदन फाराम ठीकसँग चल्छ कि चल्दैन।
+- आवेदन database मा सुरक्षित हुन्छ कि हुँदैन।
+- वडा कर्मचारीले अनुमति नभएको वडाको अभिलेख हेर्न सक्छ कि सक्दैन।
+- API असफल हुँदा प्रयोगकर्तालाई उपयुक्त error देखिन्छ कि देखिँदैन।
 
-**QA को भूमिका:** जोखिमअनुसार test coverage सुनिश्चित गर्ने, defect triage गर्ने र release का लागि परीक्षण प्रमाण उपलब्ध गराउने। Testing चरण महत्त्वपूर्ण भए पनि QA यस चरणमा मात्र सीमित हुँदैन।
+**QA को भूमिका:** जोखिमअनुसार test coverage सुनिश्चित गर्ने, defect triage मा सहयोग गर्ने, परीक्षण प्रमाण सङ्कलन गर्ने र release का लागि बाँकी जोखिम स्पष्ट पार्ने।
 
-### २.५ Deployment — प्रयोगमा ल्याउने
+> Testing एउटा महत्त्वपूर्ण चरण हो, तर QA यस चरणमा मात्र सीमित हुँदैन। Requirement र Design review देखि Maintenance सम्म पनि गुणस्तरसम्बन्धी गतिविधि चल्छ।
+
+**Deliverables:** Test plan, test cases, execution results, defect reports, test summary/report।
+
+### २.६ Deployment — प्रयोगमा ल्याउने
+
 परीक्षण र स्वीकृतिपछि सफ्टवेयरलाई वास्तविक प्रयोग हुने वातावरण (Production) मा प्रकाशित गरिन्छ।
 
 **मुख्य काम:**
 - Production configuration र environment variables मिलाउने।
 - Domain, HTTPS/TLS, secrets र database access सुरक्षित गर्ने।
 - Build, deployment र rollback प्रक्रिया तयार गर्ने।
-- आवश्यक migration र backup/restore योजना बनाउने।
+- आवश्यक database migration र backup/restore योजना जाँच्ने।
 - CI/CD pipeline, health checks, logs र monitoring तयार गर्ने।
-- Release पछि smoke test गर्ने।
+- Release पछि smoke test चलाउने।
 
 **उदाहरण:** React frontend लाई Cloudflare Pages मा र Node.js backend लाई Render जस्तो hosting मा deploy गर्ने; MongoDB Atlas access rules र production environment variables सुरक्षित रूपमा मिलाउने।
 
-**QA को भूमिका:** Deployment checklist समीक्षा, staging verification, smoke tests, migration validation र rollback readiness जाँच्ने।
+**QA को भूमिका:** Staging verification, deployment checklist, migration validation, smoke tests र rollback readiness जाँच्ने।
 
-### २.६ Maintenance — मर्मत तथा सुधार
-Release पछि प्रणालीको समस्या समाधान, सुरक्षा अपडेट, monitoring र प्रयोगकर्ताको प्रतिक्रियाका आधारमा सुधार गरिन्छ।
+**Deliverables:** Release notes, deployment record, smoke-test result, rollback plan, production monitoring setup।
+
+### २.७ Maintenance — मर्मत तथा सुधार
+
+Release पछि प्रणालीको समस्या समाधान, सुरक्षा अपडेट, monitoring र प्रयोगकर्ताको feedback का आधारमा सुधार गरिन्छ।
 
 **मुख्य काम:**
 - Bug fixing र regression testing।
 - Dependency तथा security updates।
 - Performance र usability सुधार।
-- Backup सफल भएको मात्र होइन, restore गर्न सकिन्छ कि सकिँदैन परीक्षण गर्ने।
+- Backup बनेको मात्र होइन, restore गर्न सकिन्छ कि सकिँदैन परीक्षण गर्ने।
 - Logs, metrics, alerts र incident response व्यवस्थापन गर्ने।
-- नयाँ आवश्यकता आएमा अर्को विकास चक्र सुरु गर्ने।
+- नयाँ आवश्यकता आएमा अर्को development cycle सुरु गर्ने।
 
 **उदाहरण:** प्रयोगकर्ताको प्रतिक्रियाअनुसार नयाँ सिफारिस थप्ने, त्रुटि सच्याउने र database backup बाट restore परीक्षण गर्ने।
 
-**QA को भूमिका:** Fix verification, regression testing, production monitoring बाट आएको feedback विश्लेषण र आगामी release को गुणस्तर सुनिश्चित गर्ने।
+**QA को भूमिका:** Fix verification, regression testing, production feedback विश्लेषण र आगामी release को गुणस्तर सुनिश्चित गर्ने।
+
+**Deliverables:** Patch/release notes, defect fixes, monitoring reports, updated backlog, post-incident review जहाँ आवश्यक हुन्छ।
+
+---
 
 ## ३. SDLC को सामान्य प्रक्रिया
 
 ```text
+Planning
+   ↓
 Requirement Analysis
-        ↓
-      Design
-        ↓
-   Development
-        ↓
-     Testing
-        ↓
-    Deployment
-        ↓
-   Maintenance
-        ↺
+   ↓
+Design
+   ↓
+Development
+   ↓
+Testing
+   ↓
+Deployment
+   ↓
+Maintenance
+   ↺
 Feedback / New Requirements
 ```
 
-यो सामान्य चित्र हो। वास्तविक परियोजनामा सबै चरण सधैँ एकपटक मात्र र कडाइका साथ क्रमिक रूपमा हुँदैनन्। Agile जस्ता दृष्टिकोणमा Requirement, Design, Development र Testing प्रत्येक iteration मा दोहोरिन सक्छन्। **QA सबै चरणमा चल्छ।**
+यो एउटा सामान्य चित्र हो। वास्तविक परियोजनामा सबै चरण सधैँ एकपटक मात्र र कडाइका साथ क्रमिक रूपमा हुँदैनन्। Agile जस्ता दृष्टिकोणमा Requirement, Design, Development र Testing प्रत्येक iteration मा दोहोरिन सक्छन्। QA ले यी सबै चरणमा सहयोग गर्छ।
+
+### ३.१ Entry Criteria र Exit Criteria
+
+- **Entry Criteria:** कुनै चरण सुरु गर्नुअघि पूरा हुनुपर्ने न्यूनतम सर्त।
+- **Exit Criteria:** अर्को चरणमा जान वा काम पूरा मान्न पूरा हुनुपर्ने सर्त।
+
+उदाहरण:
+- Development सुरु गर्न स्वीकृत requirement र पर्याप्त design जानकारी आवश्यक हुन सक्छ।
+- Testing सुरु गर्न testable build, test environment र test data आवश्यक हुन सक्छ।
+- Release अघि आवश्यक critical tests पास भएको, गम्भीर defect को अवस्था समीक्षा भएको र rollback plan तयार भएको हुन सक्छ।
+
+यी सर्तहरू परियोजनाको जोखिम र प्रक्रियाअनुसार तय गरिन्छन्।
+
+---
 
 ## ४. SDLC Models र Methodologies
 
-> **शब्द प्रयोगबारे:** Waterfall, V-Model, Spiral र Prototyping लाई प्रायः SDLC models भनिन्छ। Agile एउटा व्यापक approach हो; Scrum Agile अन्तर्गतको framework हो। RAD विकास दृष्टिकोण हो भने DevOps विकास र सञ्चालनलाई जोड्ने संस्कृति, अभ्यास र toolchain को संयोजन हो। अध्ययनका लागि एउटै सूचीमा तुलना गर्न सकिए पनि यी सबै एउटै प्रकारका वस्तु होइनन्।
+> **शब्द प्रयोगबारे:** Waterfall, V-Model र Spiral लाई प्रायः SDLC models भनिन्छ। Agile एउटा व्यापक approach हो; Scrum Agile सँग सम्बन्धित framework हो। RAD विकास दृष्टिकोण हो भने DevOps विकास र सञ्चालनलाई जोड्ने संस्कृति, अभ्यास र toolchain को संयोजन हो। यी सबै एउटै प्रकारका वस्तु होइनन्, तर अध्ययनका लागि तुलना गर्न सकिन्छ।
 
 ### ४.१ Waterfall Model — क्रमिक मोडेल
+
 एउटा चरणको काम पूरा गरी समीक्षा गरेपछि अर्को चरणमा जाने परम्परागत दृष्टिकोण हो।
 
-**क्रमको उदाहरण:** Requirements → Design → Implementation → Verification/Testing → Deployment → Maintenance
+**सामान्य क्रम:** Requirements → Design → Implementation → Verification/Testing → Deployment → Maintenance
 
-- **उपयुक्त:** आवश्यकता स्पष्ट र तुलनात्मक रूपमा स्थिर भएका परियोजना।
-- **फाइदा:** योजना, चरण र deliverables बुझ्न सजिलो; कागजात स्पष्ट।
-- **कमजोरी:** ढिलो feedback र पछि परिवर्तन गर्दा बढी rework हुन सक्ने।
+**उपयुक्त अवस्था:**
+- आवश्यकता स्पष्ट र तुलनात्मक रूपमा स्थिर छ।
+- चरणगत documentation र औपचारिक approval महत्त्वपूर्ण छन्।
 
-Waterfall मा पनि QA सुरुदेखि गर्न सकिन्छ र गर्नुपर्छ; औपचारिक system testing भने प्रायः पछिल्लो चरणमा केन्द्रित हुन सक्छ।
+**फाइदा:**
+- योजना, चरण र deliverables बुझ्न सजिलो।
+- जिम्मेवारी र कागजात स्पष्ट राख्न सकिन्छ।
+
+**कमजोरी:**
+- Feedback ढिलो आउन सक्छ।
+- पछिल्लो चरणमा आवश्यकता परिवर्तन भए rework बढ्न सक्छ।
+
+**QA सम्बन्धी कुरा:** Waterfall मा पनि requirement review र test planning सुरुदेखि गर्न सकिन्छ। Formal system testing प्रायः development पछө केन्द्रित भए पनि QA को सम्पूर्ण काम पछिल्लो चरणमा मात्र सीमित हुनु हुँदैन।
 
 ### ४.२ Agile — पुनरावृत्तिमूलक र लचिलो दृष्टिकोण
-सफ्टवेयरलाई साना, उपयोगी increments मा विकास गर्दै बारम्बार feedback र सुधार गरिन्छ।
 
+सफ्टवेयरलाई साना उपयोगी increments मा विकास गर्दै नियमित feedback र सुधार गर्ने दृष्टिकोण हो।
+
+**मुख्य विशेषता:**
 - कामलाई साना प्राथमिकताबद्ध भागमा विभाजन गर्ने।
-- छोटो development cycle र नियमित demonstration गर्ने।
-- प्रयोगकर्ता/Stakeholder बाट feedback लिने।
-- आवश्यकताअनुसार योजना अद्यावधिक गर्ने।
+- छोटो development cycle मा काम गर्ने।
+- Stakeholder बाट नियमित feedback लिने।
+- आवश्यकता अनुसार योजना अद्यावधिक गर्ने।
 - प्रत्येक increment मा testing र quality practices समावेश गर्ने।
-
-**उपयुक्त:** आवश्यकता परिवर्तन भइरहने र प्रयोगकर्ताको feedback महत्त्वपूर्ण हुने परियोजना।
 
 **फाइदा:** छिटो feedback, परिवर्तनसँग अनुकूलता र क्रमशः मूल्य प्रदान।
 
 **चुनौती:** प्राथमिकता, documentation, architecture र stakeholder सहभागिता व्यवस्थित गर्नुपर्छ। Agile भनेको योजना वा documentation नगर्ने भन्ने होइन।
 
 ### ४.३ Scrum Framework
-Scrum, Agile सिद्धान्तसँग मेल खाने काम व्यवस्थित गर्ने framework हो। कामलाई निश्चित अवधिका **Sprint** मा व्यवस्थित गरिन्छ। Sprint प्रायः एक महिनासम्मको हुन्छ; धेरै टोलीले १–२ हप्ताका Sprint पनि प्रयोग गर्छन्।
 
-**मुख्य जिम्मेवारी/भूमिका:**
+Scrum, Agile सिद्धान्तसँग मेल खाने काम व्यवस्थित गर्ने framework हो। कामलाई निश्चित अवधिका **Sprint** मा व्यवस्थित गरिन्छ। Sprint एक महिनासम्मको हुन सक्छ; धेरै टोलीले १–२ हप्ताका Sprint पनि प्रयोग गर्छन्।
+
+**मुख्य Accountabilities:**
 - **Product Owner:** Product Goal र Product Backlog को मूल्य तथा प्राथमिकता व्यवस्थापन गर्ने।
 - **Scrum Master:** Scrum बुझ्न र प्रभावकारी रूपमा लागू गर्न सहयोग गर्ने।
 - **Developers:** Sprint मा उपयोगी Increment निर्माण गर्ने; testing र quality सहित काम पूरा गर्ने।
 
-**मुख्य Events:** Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective र Sprint।
+**मुख्य Events:** Sprint, Sprint Planning, Daily Scrum, Sprint Review र Sprint Retrospective।
 
 **मुख्य Artifacts:** Product Backlog, Sprint Backlog र Increment।
 
-**महत्त्वपूर्ण:** Scrum भनेको Agile को पर्याय होइन; यो Agile सँग सम्बन्धित framework हो। Scrum मा QA/testing Sprint को अन्त्यमा मात्रै गर्ने होइन, कामको क्रममा नै गर्ने हो।
+**महत्त्वपूर्ण:** Scrum र Agile पर्यायवाची होइनन्। Scrum Agile सँग सम्बन्धित एउटा framework हो। Scrum मा testing Sprint को अन्त्यमा मात्रै गर्ने होइन; कामको क्रममा नै गुणस्तर कायम राखिन्छ।
 
 ### ४.४ V-Model — Verification and Validation Model
-V-Model मा विकासका चरण र तिनसँग सम्बन्धित परीक्षण योजना बीच स्पष्ट सम्बन्ध हुन्छ। बायाँपट्टि आवश्यकता/डिजाइन हुँदै implementation तर्फ जान्छ; दायाँपट्टि सम्बन्धित testing स्तरहरूतर्फ जान्छ।
+
+V-Model मा विकास/verification का चरण र तिनसँग सम्बन्धित testing/validation स्तरबीच स्पष्ट सम्बन्ध राखिन्छ। बायाँपट्टि आवश्यकता र डिजाइनबाट implementation तर्फ जान्छ; दायाँपट्टि सम्बन्धित testing स्तरहरू हुन्छन्।
 
 | विकास/Verification पक्ष | सम्बन्धित Testing/Validation पक्ष |
 |---|---|
@@ -204,39 +321,53 @@ V-Model मा विकासका चरण र तिनसँग सम्�
 | Detailed/Module Design | Unit Testing |
 | Implementation/Coding | Code निर्माण |
 
-यो mapping परियोजनाअनुसार फरक हुन सक्छ।
+यो एउटा सामान्य mapping हो; परियोजना, संगठन र testing strategy अनुसार mapping फरक हुन सक्छ।
 
-- **फाइदा:** Testing plan सुरुदेखि बनाइन्छ; requirement र test बीच traceability बलियो हुन्छ।
-- **कमजोरी:** परिवर्तनशील आवश्यकता भएका परियोजनामा औपचारिक प्रक्रिया भारी हुन सक्छ।
-- **उपयुक्त:** स्पष्ट specification र औपचारिक verification आवश्यक भएका परियोजना।
+**फाइदा:**
+- Test planning सुरुदेखि हुन्छ।
+- Requirement र test बीच traceability बलियो बनाउन मद्दत गर्छ।
+
+**कमजोरी:**
+- परिवर्तनशील आवश्यकता भएका परियोजनामा औपचारिक प्रक्रिया भारी हुन सक्छ।
+
+**उपयुक्त अवस्था:** स्पष्ट specification, traceability वा औपचारिक verification आवश्यक भएका परियोजना।
 
 ### ४.५ Spiral Model — जोखिममा आधारित चक्रिय मोडेल
+
 सफ्टवेयर धेरै चक्रमा विकास गरिन्छ। प्रत्येक चक्रमा योजना, जोखिम विश्लेषण, विकास/प्रमाणीकरण र मूल्याङ्कन गरिन्छ।
 
-सामान्य चक्र:
+**सामान्य चक्र:**
 1. उद्देश्य, विकल्प र सीमाहरू निर्धारण।
 2. जोखिम पहिचान र विश्लेषण; आवश्यक परे prototype।
 3. विकास र परीक्षण।
 4. Stakeholder समीक्षा तथा अर्को चक्रको योजना।
 
-- **उपयुक्त:** ठूला, जटिल वा उच्च जोखिम भएका परियोजना।
-- **फाइदा:** जोखिमलाई चाँडै पहिचान र व्यवस्थापन गर्न मद्दत।
-- **कमजोरी:** जोखिम विश्लेषणमा विशेषज्ञता, समय र खर्च बढी लाग्न सक्छ।
+**फाइदा:** जोखिमलाई चाँडै पहिचान र व्यवस्थापन गर्न मद्दत।
+
+**कमजोरी:** जोखिम विश्लेषणमा विशेषज्ञता, समय र खर्च बढी लाग्न सक्छ।
+
+**उपयुक्त अवस्था:** ठूला, जटिल वा उच्च जोखिम भएका परियोजना।
 
 ### ४.६ Prototyping — नमुना निर्माण
+
 अन्तिम प्रणाली बनाउनु अघि नमुना (Prototype) तयार गरी प्रयोगकर्ताबाट feedback लिइन्छ।
 
-- **उपयुक्त:** प्रयोगकर्ताको आवश्यकता वा UI/UX पूर्ण रूपमा स्पष्ट नभएको अवस्था।
-- **फाइदा:** गलत बुझाइ चाँडै पत्ता लाग्छ; प्रयोगकर्तालाई अपेक्षित व्यवहार देखाउन सकिन्छ।
-- **जोखिम:** Prototype लाई production-ready प्रणाली ठान्नु हुँदैन। वास्तविक security, accessibility, data validation र architecture छुट्टै डिजाइन/परीक्षण गर्नुपर्छ।
+**उपयुक्त अवस्था:** प्रयोगकर्ताको आवश्यकता वा UI/UX पूर्ण रूपमा स्पष्ट नभएको अवस्था।
+
+**फाइदा:** गलत बुझाइ चाँडै पत्ता लाग्छ र प्रयोगकर्ताले अपेक्षित व्यवहार हेरेर प्रतिक्रिया दिन सक्छन्।
+
+**जोखिम:** Prototype लाई production-ready प्रणाली ठान्नु हुँदैन। वास्तविक security, accessibility, data validation र architecture छुट्टै डिजाइन तथा परीक्षण गर्नुपर्छ।
 
 ### ४.७ RAD (Rapid Application Development)
+
 Prototype, reusable components र प्रयोगकर्ताको निरन्तर सहभागिताबाट सीमित दायराका application छिटो निर्माण गर्ने दृष्टिकोण हो।
 
-- **उपयुक्त:** दायरा व्यवस्थापन गर्न सकिने र प्रयोगकर्ताको feedback छिटो उपलब्ध हुने परियोजना।
-- **सीमा:** जटिल integration, उच्च performance/security आवश्यकता वा धेरै dependency भएका प्रणालीमा थप सावधानी चाहिन्छ।
+**फाइदा:** छिटो feedback र छोटो विकास चक्र।
+
+**सीमा:** जटिल integration, उच्च performance/security आवश्यकता वा धेरै dependency भएका प्रणालीमा थप योजना र सावधानी चाहिन्छ।
 
 ### ४.८ DevOps — Development र Operations बीच सहकार्य
+
 DevOps ले विकास, testing, deployment र सञ्चालनलाई जोड्दै automation, साझा जिम्मेवारी, CI/CD, monitoring र निरन्तर feedback मा जोड दिन्छ।
 
 **मुख्य अभ्यास:**
@@ -245,25 +376,28 @@ DevOps ले विकास, testing, deployment र सञ्चालनल�
 - Infrastructure/configuration as code जहाँ उपयुक्त हुन्छ।
 - Logs, metrics, alerts र incident response।
 - Backup/restore तथा rollback अभ्यास।
-- Security checks लाई pipeline मा समावेश गर्ने (DevSecOps अभ्याससहित)।
+- Security checks लाई pipeline मा समावेश गर्ने; यससँग सम्बन्धित अभ्यासलाई DevSecOps पनि भनिन्छ।
 
-**महत्त्वपूर्ण:** DevOps कुनै एउटा tool वा deployment method मात्र होइन। यसले QA हटाउँदैन; automated र निरन्तर quality checks लाई थप प्रभावकारी बनाउँछ।
+**महत्त्वपूर्ण:** DevOps कुनै एउटा tool वा deployment method मात्र होइन। यसले QA हटाउँदैन; automated र निरन्तर quality checks लाई थप प्रभावकारी बनाउन सक्छ।
 
-## ५. तुलना र सही छनोट
+---
+
+## ५. Model/Approach तुलना र छनोट
 
 | Model/Approach | मुख्य विशेषता | QA/Testing को स्वरूप | उपयुक्त अवस्था |
 |---|---|---|---|
-| Waterfall | क्रमिक चरण | प्रत्येक चरणमा review; formal system testing प्रायः पछि | स्थिर आवश्यकता |
+| Waterfall | क्रमिक चरण | चरणगत review; formal system testing प्रायः पछि | स्थिर आवश्यकता |
 | Agile | छोटा iteration र feedback | प्रत्येक iteration मा निरन्तर | बदलिँदो आवश्यकता |
-| Scrum | Sprint मार्फत काम व्यवस्थापन | Sprint भित्रै testing र Definition of Done | टोलीमा product विकास |
-| V-Model | विकास चरणसँग testing mapping | आवश्यकता चरणदेखि test planning र traceability | औपचारिक verification |
+| Scrum | Sprint मार्फत काम व्यवस्थापन | Sprint भित्र testing र Definition of Done | Product development टोली |
+| V-Model | विकास चरणसँग testing mapping | प्रारम्भिक test planning र traceability | औपचारिक verification |
 | Spiral | जोखिम विश्लेषणसहित चक्र | प्रत्येक चक्रमा risk-based verification | ठूला/उच्च जोखिमका system |
-| Prototyping | नमुना र feedback | prototype बाटै usability/requirement जाँच; production testing छुट्टै | अस्पष्ट आवश्यकता |
+| Prototyping | नमुना र feedback | prototype बाट requirement/usability जाँच; production testing छुट्टै | अस्पष्ट आवश्यकता |
 | RAD | छिटो निर्माण र reusable components | बारम्बार validation/testing | सीमित दायराको छिटो विकास |
 | DevOps | automation, delivery र operations सहकार्य | CI/CD, automated tests, monitoring | नियमित release/सञ्चालन |
 
 ### कुन सबैभन्दा राम्रो?
-सबै परियोजनाका लागि एउटै उत्तम मोडेल हुँदैन। छनोट गर्दा विचार गर्नुहोस्:
+
+सबै परियोजनाका लागि एउटै उत्तम model हुँदैन। छनोट गर्दा विचार गर्नुहोस्:
 - आवश्यकता कति स्थिर वा परिवर्तनशील छ?
 - जोखिम र सुरक्षा आवश्यकता कति उच्च छन्?
 - बजेट, समय र टोलीको सीप कस्तो छ?
@@ -273,11 +407,13 @@ DevOps ले विकास, testing, deployment र सञ्चालनल�
 
 **MERN नगरपालिका पोर्टलका लागि उदाहरणीय संयोजन:** Agile/Scrum बाट काम व्यवस्थित गर्ने, V-Model-जस्तो requirement-to-test traceability अपनाउने, र DevOps/CI/CD बाट repeatable testing/deployment गर्ने। यो अनिवार्य recipe होइन; परियोजनाको सन्दर्भअनुसार मिलाउनुपर्छ।
 
+---
+
 ## ६. QA विकासपछि मात्र किन सुरु गर्नु हुँदैन?
 
 QA (Quality Assurance) विकास सकिएपछि मात्र सुरु हुने अन्तिम काम होइन। यो Requirement चरणदेखि सुरु भएर Design, Development, Testing, Deployment र Maintenance सम्म चल्ने गुणस्तरसम्बन्धी गतिविधिहरूको समष्टि हो।
 
-### प्रत्येक चरणमा QA
+### ६.१ प्रत्येक चरणमा QA
 
 **Requirement चरण**
 - आवश्यकता स्पष्ट, पूर्ण, सम्भव र परीक्षण गर्न मिल्ने छ कि छैन?
@@ -291,7 +427,7 @@ QA (Quality Assurance) विकास सकिएपछि मात्र स
 - Authorization र privacy सुरुदेखि डिजाइन गरिएको छ?
 - Accessibility, responsive layout र error states विचार गरिएको छ?
 
-उदाहरण: वडा कर्मचारीलाई आफ्नै वडाको record मात्र हेर्न दिने authorization rule डिजाइन गर्ने।
+उदाहरण: वडा कर्मचारीलाई आफ्नो अधिकारभित्रका record मात्र हेर्न दिने authorization rule डिजाइन गर्ने।
 
 **Development चरण**
 - Code review, linting र automated tests चलाइएका छन्?
@@ -317,12 +453,14 @@ QA (Quality Assurance) विकास सकिएपछि मात्र स
 - Dependency/security updates समीक्षा गरिन्छ?
 - Backup restore परीक्षण र monitoring alerts जाँचिन्छ?
 
-### ढिलो त्रुटि पत्ता लगाउँदा लागत किन बढ्न सक्छ?
-आवश्यकता चरणमै गलत बुझाइ पत्ता लागेमा document वा acceptance criteria सच्याउनु पर्याप्त हुन सक्छ। Production पछि पत्ता लागेमा code, database migration, data correction, frontend, backend, regression testing, release र incident handling समेत आवश्यक हुन सक्छ।
+### ६.२ ढिलो त्रुटि पत्ता लगाउँदा लागत किन बढ्न सक्छ?
 
-कहिलेकाहीँ शिक्षण सामग्रीमा Requirement = 1×, Design = 3×, Development = 5×, System Testing = 10× र Production = 30× जस्ता उदाहरण देखाइन्छन्। **यी निश्चित वा सार्वभौमिक वैज्ञानिक अनुपात होइनन्।** वास्तविक लागत त्रुटिको प्रकृति, प्रभाव, architecture र परियोजनाअनुसार फरक हुन्छ। सही निष्कर्ष भनेको प्रारम्भिक review ले धेरै defect सस्तो अवस्थामा समात्न मद्दत गर्छ।
+Requirement चरणमै गलत बुझाइ पत्ता लागेमा document वा acceptance criteria सच्याउनु पर्याप्त हुन सक्छ। Production पछि पत्ता लागेमा code, database migration, data correction, frontend, backend, regression testing, release र incident handling समेत आवश्यक हुन सक्छ।
 
-### QA सुरुदेखि गर्दा हुने फाइदा
+कहिलेकाहीँ शिक्षण सामग्रीमा Requirement = 1×, Design = 3×, Development = 5×, System Testing = 10× र Production = 30× जस्ता उदाहरण देखाइन्छन्। **यी निश्चित वा सार्वभौमिक वैज्ञानिक अनुपात होइनन्।** वास्तविक लागत त्रुटिको प्रकृति, प्रभाव, architecture र परियोजनाअनुसार फरक हुन्छ। मुख्य कुरा: प्रारम्भिक review ले धेरै defect सस्तो अवस्थामा समात्न मद्दत गर्छ।
+
+### ६.३ QA सुरुदेखि गर्दा हुने फाइदा
+
 - गलत requirement अनुसार code बनाउने जोखिम घट्छ।
 - Security र access-control कमजोरी चाँडै देखिन्छ।
 - Rework, ढिलाइ र अनावश्यक खर्च घटाउन मद्दत हुन्छ।
@@ -332,32 +470,41 @@ QA (Quality Assurance) विकास सकिएपछि मात्र स
 
 **निष्कर्ष:** Development पछि system testing अझै आवश्यक छ; तर त्यो सम्पूर्ण QA होइन। QA ले सुरुदेखि नै गुणस्तर निर्माण गर्ने काम गर्छ।
 
+---
+
 ## ७. QA, QC र Testing बीचको फरक
 
-| पक्ष | QA (Quality Assurance) | QC (Quality Control) / Testing |
-|---|---|---|
-| मुख्य उद्देश्य | दोष रोक्ने र प्रक्रिया सुधार्ने | बनेको output मा defect पत्ता लगाउने |
-| केन्द्रबिन्दु | प्रक्रिया, मापदण्ड, requirement/design review | code, UI, API र प्रणालीको व्यवहार |
-| कहिलेदेखि? | योजना/Requirement चरणदेखि | परीक्षण गर्न मिल्ने artifact उपलब्ध भएपछि; विभिन्न चरणमा |
-| उदाहरण | requirement review, process audit, Definition of Done | API test, UI test, regression test |
-| जिम्मेवारी | सम्पूर्ण टोलीको योगदान; QA specialist ले नेतृत्व गर्न सक्छ | developer, tester र automation सहित विभिन्न सदस्य |
+| पक्ष | QA (Quality Assurance) | QC (Quality Control) | Testing |
+|---|---|---|---|
+| मुख्य उद्देश्य | गुणस्तर कायम राख्ने प्रक्रिया सुधार्ने र defect रोक्न मद्दत गर्ने | deliverable/उत्पादनको गुणस्तर जाँच्ने | व्यवहार जाँचेर defect पत्ता लगाउने र आवश्यकता पूरा भएको प्रमाण जुटाउने |
+| केन्द्रबिन्दु | प्रक्रिया, मापदण्ड, review र prevention | उत्पादन र deliverables | code, UI, API र प्रणालीको व्यवहार |
+| कहिलेदेखि? | योजना/Requirement चरणदेखि | जाँच्न मिल्ने output उपलब्ध भएपछि विभिन्न चरणमा | परीक्षण गर्न मिल्ने artifact उपलब्ध भएपछि; विकासक्रम र release अघि/पछि |
+| उदाहरण | requirement review, process audit, Definition of Done | deliverable inspection, test result review | API test, UI test, regression test |
+| कसले गर्छ? | सम्पूर्ण टोलीको योगदान; QA specialist ले नेतृत्व गर्न सक्छ | QA/QC specialist, developer वा सम्बन्धित टोली | developer, tester, automation engineer र अन्य सदस्य |
 
-व्यवहारमा QA र QC शब्दहरू संस्थाअनुसार फरक अर्थमा प्रयोग हुन सक्छन्। सामान्य सिकाइका लागि QA लाई defect prevention/process-oriented र Testing लाई defect detection/product-oriented गतिविधिका रूपमा बुझ्न सकिन्छ। Testing भनेको केवल bug खोज्नु होइन; आवश्यकता पूरा भएको प्रमाण सङ्कलन गर्नु पनि हो।
+Практиकमा QA र QC शब्दहरू संस्थाअनुसार केही फरक अर्थमा प्रयोग हुन सक्छन्। सिकाइका लागि QA लाई प्रक्रिया/defect prevention, QC लाई deliverable quality control र Testing लाई उत्पादनको व्यवहार जाँच्ने गतिविधिका रूपमा छुट्याएर बुझ्नु उपयोगी हुन्छ। **Testing भनेको केवल bug खोज्नु होइन; आवश्यकता पूरा भएको प्रमाण सङ्कलन गर्नु पनि हो।**
+
+---
 
 ## ८. Shift-Left, Continuous र Shift-Right Testing
 
-### Shift-Left Testing
+### ८.१ Shift-Left Testing
+
 गुणस्तर जाँचलाई SDLC को सुरुवाती चरणतर्फ सार्ने अभ्यास।
+
 - Requirement review र acceptance criteria।
 - Design review र threat modeling।
 - Development कै क्रममा unit/component/API tests।
 - Pull request मा lint, type-check र automated test।
 
-### Continuous Testing
+### ८.२ Continuous Testing
+
 Development र delivery प्रक्रियामा आवश्यक automated/manual testing निरन्तर चलाउने अभ्यास। प्रत्येक test सबै commit मा चलाउनुपर्छ भन्ने होइन; गति, लागत र जोखिमअनुसार pipeline बनाइन्छ।
 
-### Shift-Right Testing
+### ८.३ Shift-Right Testing
+
 Release पछि वास्तविक प्रयोगको व्यवहारबाट सिक्ने अभ्यास।
+
 - Production health monitoring र error rates।
 - सुरक्षित रूपमा प्रयोगकर्ता feedback सङ्कलन।
 - Canary/gradual release जहाँ उपयुक्त हुन्छ।
@@ -372,7 +519,9 @@ Requirement → Design → Development → Integration/System Test → Release
 
 तीनै अभ्यास एकअर्काका विकल्प होइनन्; सँगै प्रयोग गर्न सकिन्छ।
 
-## ९. Requirement लेख्ने उदाहरण: Password Reset
+---
+
+## ९. Requirement र Acceptance Criteria को उदाहरण
 
 Requirement ले प्रणालीले के गर्नुपर्छ भन्ने स्पष्ट रूपमा बताउनुपर्छ। QA ले requirement लाई testable acceptance criteria र test cases मा रूपान्तरण गर्न मद्दत गर्छ।
 
@@ -398,8 +547,14 @@ Requirement ले प्रणालीले के गर्नुपर्�
 6. मान्य token बाट नयाँ password नीति अनुसार सेट गर्न सकिन्छ।
 7. अमान्य, expired वा प्रयोग भइसकेको token बाट password परिवर्तन हुँदैन।
 8. सफल reset पछि पुष्टि सन्देश देखिन्छ।
-9. Password reset गर्दा session/token revoke गर्ने व्यवहार स्पष्ट रूपमा परिभाषित गरिन्छ।
-10. Reset token वा password logs मा plaintext रूपमा लेखिँदैन।
+9. Password reset गर्दा पुराना session/token revoke गर्ने व्यवहार स्पष्ट रूपमा परिभाषित गरिन्छ।
+10. Reset token वा password plaintext रूपमा logs मा लेखिँदैन।
+
+**थप सुरक्षा विचार:**
+- Token database मा भण्डारण गर्दा सम्भव भएसम्म token को hash मात्र राख्ने।
+- Reset link HTTPS बाट मात्र खोल्ने।
+- Registered र unregistered email का लागि सार्वजनिक प्रतिक्रिया समान राख्ने; response timing बाट account existence खुल्ने जोखिम पनि विचार गर्ने।
+- Rate limiting वा abuse protection लागू गर्ने।
 
 > Token expiry को ठ्याक्कै अवधि (उदाहरणका लागि 10–30 मिनेट) परियोजनाको security policy अनुसार तय गर्नुपर्छ; यो उदाहरण सार्वभौमिक नियम होइन।
 
@@ -408,7 +563,7 @@ Requirement ले प्रणालीले के गर्नुपर्�
 | ID | परीक्षण अवस्था | परीक्षण चरण | अपेक्षित नतिजा |
 |---|---|---|---|
 | TC-01 | दर्ता भएको email | Reset अनुरोध | सुरक्षित reset प्रक्रिया सुरु हुन्छ; सार्वजनिक सन्देशले account existence खुलाउँदैन |
-| TC-02 | दर्ता नभएको email | Reset अनुरोध | समान प्रकारको सामान्य सन्देश; account enumeration नहुने |
+| TC-02 | दर्ता नभएको email | Reset अनुरोध | समान प्रकारको सामान्य सन्देश; account enumeration जोखिम घटाइन्छ |
 | TC-03 | गलत ढाँचाको email | Reset अनुरोध | स्पष्ट validation; अनुचित request अस्वीकार |
 | TC-04 | Valid reset link | नयाँ password पेश | Password policy पूरा भए reset सफल |
 | TC-05 | Expired token | Link खोल्ने | Password परिवर्तन अस्वीकार |
@@ -419,6 +574,7 @@ Requirement ले प्रणालीले के गर्नुपर्�
 | TC-10 | Logging जाँच | Reset flow | Password/token plaintext log नभएको |
 
 ### ९.४ राम्रो Requirement का गुण
+
 - **Clear:** एउटै अर्थ लाग्ने।
 - **Complete:** आवश्यक अवस्था र अपवाद समेटिएको।
 - **Consistent:** अर्को requirement सँग विरोधाभास नभएको।
@@ -426,6 +582,8 @@ Requirement ले प्रणालीले के गर्नुपर्�
 - **Testable:** पास/फेल निर्धारण गर्न सकिने।
 - **Traceable:** requirement बाट test case र release evidence सम्म सम्बन्ध देखाउन सकिने।
 - **Prioritized:** महत्त्व र जोखिमअनुसार क्रम निर्धारण गरिएको।
+
+---
 
 ## १०. Test Levels र Test Types
 
@@ -436,12 +594,14 @@ Requirement ले प्रणालीले के गर्नुपर्�
 | Unit Testing | सानो function/module अलग्गै | password validation helper |
 | Component Testing | UI component वा component समूह | React login form validation |
 | Integration Testing | दुई वा बढी भागबीचको सम्बन्ध | Express route + service + MongoDB |
-| System / End-to-End (E2E) Testing | सम्पूर्ण user workflow | Login → आवेदन → submit → status |
+| System Testing | सम्पूर्ण integrated system ले निर्दिष्ट requirement पूरा गर्छ कि गर्दैन | सम्पूर्ण नगरपालिका पोर्टलको functional/system checks |
+| End-to-End (E2E) Testing | प्रयोगकर्ताको सुरुदेखि अन्त्यसम्मको workflow | Login → आवेदन → submit → status हेर्ने |
 | Acceptance Testing (UAT) | प्रयोगकर्ता/व्यावसायिक आवश्यकता पूरा भए/नभएको | वडा कर्मचारीले वास्तविक कार्यप्रवाह स्वीकार गर्ने |
 
-Component Testing, Integration Testing र E2E Testing का वर्गीकरण टोलीअनुसार फरक हुन सक्छन्। मुख्य कुरा परीक्षणको scope र उद्देश्य स्पष्ट गर्नु हो।
+**System Testing र E2E Testing एउटै होइनन्।** System Testing ले सम्पूर्ण प्रणालीको व्यवहार र requirement coverage जाँच्छ। E2E Testing ले वास्तविक प्रयोगकर्ताको workflow सुरुदेखि अन्त्यसम्म पूरा हुन्छ कि हुँदैन भन्नेमा विशेष ध्यान दिन्छ। व्यवहारमा यी परीक्षणका केही क्षेत्र एकअर्कासँग overlap हुन सक्छन्।
 
 ### १०.२ सामान्य Test Types
+
 - **Functional Testing:** सुविधा आवश्यकता अनुसार चल्छ कि चल्दैन।
 - **Regression Testing:** नयाँ परिवर्तनले पुरानो सुविधा बिगारेको छ कि छैन।
 - **Smoke Testing:** build/deployment का मुख्य सुविधाहरू आधारभूत रूपमा चल्छन् कि चल्दैनन्।
@@ -455,16 +615,20 @@ Component Testing, Integration Testing र E2E Testing का वर्गीक
 - **Compatibility Testing:** समर्थित browser/device/environment मा प्रणाली चल्छ कि चल्दैन।
 
 ### १०.३ Severity र Priority
-- **Severity:** defect ले प्रणाली/प्रयोगकर्तामा कति गम्भीर असर पार्छ?
+
+- **Severity:** defect ले प्रणाली वा प्रयोगकर्तामा कति गम्भीर असर पार्छ?
 - **Priority:** defect कति छिटो समाधान गर्नुपर्छ?
 
 उदाहरण: संवेदनशील नागरिक विवरण अर्को वडाले हेर्न सक्नु उच्च severity र उच्च priority हुन सक्छ। UI मा सानो spacing समस्या कम severity भए पनि release वा demo अघि उच्च priority पाउन सक्छ।
+
+---
 
 ## ११. MERN Project मा SDLC र QA
 
 React + Node.js/Express + MongoDB परियोजनाका लागि तलको workflow उपयोगी सुरुवात हो।
 
 ### चरण १: Requirement र Backlog
+
 - प्रत्येक feature को उद्देश्य, user role र acceptance criteria लेख्ने।
 - Happy path सँगै invalid input, permission denied र failure states लेख्ने।
 - Feature लाई जोखिम र मूल्यअनुसार प्राथमिकता दिने।
@@ -473,6 +637,7 @@ React + Node.js/Express + MongoDB परियोजनाका लागि �
 **Deliverables:** `REQUIREMENTS.md`, user stories, acceptance criteria, prioritized backlog।
 
 ### चरण २: UI/UX र Architecture Design
+
 - Wireframes/prototype, responsive states र form error states समीक्षा गर्ने।
 - API request/response contract र status codes परिभाषित गर्ने।
 - MongoDB schema, indexes र data relationships समीक्षा गर्ने।
@@ -482,6 +647,7 @@ React + Node.js/Express + MongoDB परियोजनाका लागि �
 **Deliverables:** design notes, API specification, data model, permission matrix, test plan।
 
 ### चरण ३: Development + Developer Testing
+
 - Feature branch र pull request workflow प्रयोग गर्ने।
 - Lint/type-check र code review चलाउने।
 - Unit/component tests लेख्ने।
@@ -491,11 +657,13 @@ React + Node.js/Express + MongoDB परियोजनाका लागि �
 **Deliverables:** code, tests, review record, defect list।
 
 ### चरण ४: Integration र System Testing
+
 - Frontend → API → database सम्म data flow जाँच्ने।
 - Authentication र authorization सबै protected endpoints मा verify गर्ने।
 - Role-based access matrix अनुसार सकारात्मक र नकारात्मक tests चलाउने।
 - Mobile layout, keyboard navigation र लामो नेपाली text जाँच्ने।
 - Regression suite चलाउने।
+- E2E test मार्फत महत्त्वपूर्ण user journey पूरा हुन्छ कि जाँच्ने।
 
 **उदाहरणका test scenarios:**
 - नागरिकले आफ्नै आवेदन मात्र हेर्न पाउने।
@@ -505,6 +673,7 @@ React + Node.js/Express + MongoDB परियोजनाका लागि �
 - Database वा email service असफल हुँदा उपयोगी error र सुरक्षित logging हुने।
 
 ### चरण ५: Security, Performance र Accessibility
+
 - Dependency vulnerability scan र static analysis चलाउने।
 - Secrets repository मा commit नभएको जाँच्ने।
 - Rate limiting, secure cookies/session/JWT handling र CORS configuration समीक्षा गर्ने।
@@ -515,6 +684,7 @@ React + Node.js/Express + MongoDB परियोजनाका लागि �
 **सुरक्षा नोट:** Testing आफूले अधिकार पाएको development/staging environment मा गर्नुहोस्। Production मा intrusive load/security test गर्नुअघि स्पष्ट स्वीकृति र योजना चाहिन्छ।
 
 ### चरण ६: Staging र Release तयारी
+
 - Production-जस्तै staging environment मा critical workflows चलाउने।
 - Environment variables र secrets deployment platform मा configure गर्ने।
 - Database migration तथा backup/restore योजना जाँच्ने।
@@ -522,12 +692,14 @@ React + Node.js/Express + MongoDB परियोजनाका लागि �
 - Release को risk अनुसार quality gate पास भएपछि मात्र production मा जाने।
 
 ### चरण ७: Deployment र Post-release Verification
+
 - Build/deploy result र health checks जाँच्ने।
 - Login, प्रमुख API, database connectivity र मुख्य user journey का smoke tests चलाउने।
 - Logs, error rate, latency, resource use र backup status monitor गर्ने।
 - समस्या आएमा rollback/mitigation प्रक्रिया अपनाउने।
 
 ### चरण ८: Maintenance र Feedback
+
 - Defect को root cause विश्लेषण गर्ने।
 - Fix पछि regression tests चलाउने।
 - Dependencies र security advisories समीक्षा गर्ने।
@@ -539,26 +711,29 @@ React + Node.js/Express + MongoDB परियोजनाका लागि �
 ```text
 Requirement + Acceptance Criteria
               ↓
-      Design / Risk Review
+       Design / Risk Review
               ↓
-         Development
+          Development
               ↓
- Unit / Component / API Tests
+  Unit / Component / API Tests
               ↓
-     Integration / E2E Tests
+      Integration / E2E Tests
               ↓
-       Fix + Regression
+        Fix + Regression
               ↓
-    Review + Quality Gate
+     Review + Quality Gate
               ↓
-           Release
+            Release
               ↓
-   Monitor + Feedback → Next Cycle
+    Monitor + Feedback → Next Cycle
 ```
+
+---
 
 ## १२. Quality Gates र Definition of Done
 
 ### १२.१ उदाहरणीय Quality Gates
+
 - [ ] सबै critical/high-priority requirements र acceptance criteria समीक्षा भएका छन्।
 - [ ] Pull request/code review पूरा भएको छ।
 - [ ] आवश्यक unit, integration र E2E tests पास भएका छन्।
@@ -574,6 +749,7 @@ Requirement + Acceptance Criteria
 यी उदाहरण हुन्; सबै परियोजनामा एउटै gate अनिवार्य हुँदैन। जोखिम र नियमनअनुसार gate परिभाषित गर्नुपर्छ।
 
 ### १२.२ Definition of Done (DoD)
+
 कुनै feature “Done” मानिने न्यूनतम साझा मापदण्ड हो। उदाहरण:
 - Acceptance criteria पूरा।
 - Code review स्वीकृत।
@@ -585,9 +761,11 @@ Requirement + Acceptance Criteria
 
 **“मेरो कम्प्युटरमा चल्यो” मात्र Done को प्रमाण होइन।**
 
-## १३. आम गल्ती र राम्रो अभ्यास
+---
 
-| आम गल्ती | राम्रो अभ्यास |
+## १३. सामान्य गल्ती र राम्रो अभ्यास
+
+| सामान्य गल्ती | राम्रो अभ्यास |
 |---|---|
 | सबै code बनेपछि मात्र QA बोलाउने | Requirement review देखि नै quality activity सुरु गर्ने |
 | Requirement अस्पष्ट राख्ने | Testable acceptance criteria लेख्ने |
@@ -601,6 +779,9 @@ Requirement + Acceptance Criteria
 | Bug fix पछि पुराना test नचलाउने | Regression tests पुनः चलाउने |
 | सबै test हरेक commit मा चलाउने | गति, लागत र जोखिमअनुसार test pipeline डिजाइन गर्ने |
 | DevOps लाई deployment tool मात्र ठान्ने | Automation, collaboration, monitoring र feedback सहित बुझ्ने |
+| System Testing र E2E लाई एउटै मान्ने | उद्देश्य र scope स्पष्ट गरी छुट्टाछुट्टै परिभाषित गर्ने |
+
+---
 
 ## १४. शब्दावली
 
@@ -633,6 +814,8 @@ Requirement + Acceptance Criteria
 | Shift-Right | release पछिको व्यवहार/feedback बाट सिक्ने |
 | Rollback | परिवर्तन समस्या हुँदा अघिल्लो सुरक्षित अवस्थामा फर्काउने |
 | Traceability | requirement, test र result बीचको सम्बन्ध पछ्याउन सक्ने अवस्था |
+
+---
 
 ## १५. अभ्यास प्रश्न र उत्तर
 
@@ -700,15 +883,23 @@ Requirement + Acceptance Criteria
 - C. अनधिकृत API/resource access रोक्न
 - D. Database हटाउन
 
+**११. System Testing र E2E Testing बारे कुन भनाइ सही हो?**
+- A. दुवै सधैँ एउटै हुन्
+- B. E2E ले workflow सुरुदेखि अन्त्यसम्म जाँच्छ; System Testing ले सम्पूर्ण प्रणालीको requirement conformance जाँच्छ
+- C. E2E मा कुनै user workflow हुँदैन
+- D. System Testing केवल रंग जाँच्ने हो
+
 ### भाग B — छोटो उत्तर
+
 1. SDLC phases र SDLC models बीचको फरक लेख्नुहोस्।
-2. QA र Testing बीच कम्तीमा तीन फरक लेख्नुहोस्।
+2. QA, QC र Testing बीच कम्तीमा तीन फरक लेख्नुहोस्।
 3. Shift-Left Testing के हो? MERN project बाट एउटा उदाहरण दिनुहोस्।
 4. Functional र Non-functional requirement को एक-एक उदाहरण लेख्नुहोस्।
 5. Scrum र Agile एउटै कुरा किन होइनन्?
 6. Production deployment अघि जाँच्नुपर्ने पाँचवटा विषय लेख्नुहोस्।
 7. Feature “Done” मान्नुअघि Definition of Done मा के-के समावेश गर्न सकिन्छ?
 8. Requirement बाट Test Case सम्म traceability किन उपयोगी हुन्छ?
+9. System Testing र E2E Testing बीचको फरक उदाहरणसहित लेख्नुहोस्।
 
 ### भाग C — व्यावहारिक अभ्यास
 
@@ -744,17 +935,33 @@ Requirement + Acceptance Criteria
 | ८ | A — सहकार्य, automation र feedback | DevOps ले delivery र operations सुधारमा जोड दिन्छ। |
 | ९ | C — सीमित अवधि र एकपटक प्रयोग | यसले reset-token दुरुपयोगको जोखिम घटाउँछ। |
 | १० | C — अनधिकृत access रोक्न | Client-side UI bypass गर्न सकिन्छ; server ले अधिकार जाँच्नुपर्छ। |
+| ११ | B — System Testing र E2E का उद्देश्य फरक छन् | दुवै overlap हुन सक्छन्, तर तिनको मुख्य focus एउटै होइन। |
+
+---
 
 ## १६. छोटो पुनरावलोकन
 
-- SDLC का सामान्य ६ चरण: **Requirement → Design → Development → Testing → Deployment → Maintenance**।
+- SDLC का चरणहरूको संख्या र नाम प्रयोग गरिएको प्रक्रियाअनुसार फरक हुन सक्छ। यस नोटमा Planning सहितको सामान्य प्रक्रिया र ६ चरणको प्रचलित वर्गीकरण व्याख्या गरिएको छ।
+- सामान्य ६ चरण: **Requirement → Design → Development → Testing → Deployment → Maintenance**।
 - Phases ले *के काम हुन्छ* भन्छन्; models/approaches ले *काम कसरी व्यवस्थित हुन्छ* बताउँछन्।
 - Waterfall क्रमिक, Agile पुनरावृत्तिमूलक, Scrum Sprint-आधारित framework, V-Model development/testing mapping, Spiral risk-based र Prototyping feedback-आधारित हो।
 - DevOps ले Development र Operations बीच automation, collaboration, monitoring र feedback जोड्छ।
 - **QA Requirement चरणदेखि सुरु हुन्छ; Testing पनि विकासको क्रममा र release अघि/पछि आवश्यकताअनुसार चल्छ।**
 - Shift-Left ले सुरुवाती जाँच, Continuous Testing ले delivery क्रममा जाँच र Shift-Right ले release पछिको feedback/monitoring मा जोड दिन्छ।
 - राम्रो requirement स्पष्ट, पूर्ण, consistent र testable हुनुपर्छ।
+- System Testing र E2E Testing सम्बन्धित भए पनि तिनको उद्देश्य र scope पूर्ण रूपमा एउटै होइन।
 - MERN परियोजनामा frontend, backend, database, authentication, authorization, security, responsive UI र end-to-end workflow सबै परीक्षण गर्नुपर्छ।
 - Production मा release गर्नु अघि जोखिमअनुसार quality gates पास हुनुपर्छ; release पछि monitoring, backup/restore र maintenance जारी रहन्छ।
 
 > **अन्तिम सम्झना:** गुणस्तर अन्तिममा परीक्षण गरेर मात्र थपिने वस्तु होइन। आवश्यकता, design, code, test, deployment र maintenance — हरेक चरणमा गुणस्तर निर्माण गर्नुपर्छ।
+
+---
+
+## १७. थप अध्ययनका स्रोत
+
+यी स्रोतहरू अवधारणा थप बुझ्नका लागि हुन्। यस नोटका सबै वाक्य वा उदाहरण कुनै एउटै स्रोतबाट जस्ताको तस्तै लिइएका होइनन्।
+
+- **ISTQB Glossary:** Software Testing का शब्दावली र testing अवधारणा — https://glossary.istqb.org/
+- **The Scrum Guide:** Scrum framework को आधिकारिक guide — https://scrumguides.org/
+- **OWASP Cheat Sheet Series:** Web application security अभ्यासहरू — https://cheatsheetseries.owasp.org/
+- **OWASP Web Security Testing Guide:** Web application security testing का मार्गदर्शन — https://owasp.org/www-project-web-security-testing-guide/
