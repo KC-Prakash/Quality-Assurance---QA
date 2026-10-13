@@ -1,27 +1,28 @@
-## विषयसूची
+## STLC Notes — विषयसूची
 
-1. Software Testing Life Cycle (STLC) परिचय
-2. STLC र SDLC बीचको फरक
-3. STLC का मुख्य चरणहरू
-4. उदाहरणका लागि प्रयोग गरिने परियोजना
-5. चरण १ — Requirement Analysis
-6. चरण २ — Test Planning
-7. चरण ३ — Test Case Design / Test Design
-8. चरण ४ — Test Environment Setup
-9. चरण ५ — Test Execution
-10. चरण ६ — Test Closure
-11. STLC मा प्रयोग हुने मुख्य कागजात
-12. Bug / Defect Life Cycle
-13. Severity र Priority
-14. Test Metrics र रिपोर्टिङ
-15. Risk-Based Testing
-16. Traceability Matrix (RTM)
-17. Automation Testing र STLC
-18. Agile/Scrum मा STLC
-19. Beginner देखि Advanced सम्म अभ्यास योजना
-20. अभ्यास प्रश्न तथा उत्तर
-21. Glossary — महत्त्वपूर्ण शब्दावली
-22. अन्तिम पुनरावलोकन चेकलिस्ट
+1. [Software Testing Life Cycle (STLC) परिचय](#1-software-testing-life-cycle-stlc-परिचय)
+2. [STLC र SDLC बीचको फरक](#2-stlc-र-sdlc-बीचको-फरक)
+3. [STLC का मुख्य चरणहरू — एक नजरमा](#3-stlc-का-मुख्य-चरणहरू--एक-नजरमा)
+4. [उदाहरणका लागि प्रयोग गरिने परियोजना](#4-उदाहरणका-लागि-प्रयोग-गरिने-परियोजना)
+5. [चरण १ — Requirement Analysis](#5-चरण-१--requirement-analysis)
+6. [चरण २ — Test Planning](#6-चरण-२--test-planning)
+7. [चरण ३ — Test Case Design / Test Design](#7-चरण-३--test-case-design--test-design)
+8. [चरण ४ — Test Environment Setup](#8-चरण-४--test-environment-setup)
+9. [चरण ५ — Test Execution](#9-चरण-५--test-execution)
+10. [चरण ६ — Test Closure](#10-चरण-६--test-closure)
+11. [STLC मा प्रयोग हुने मुख्य कागजात](#11-stlc-मा-प्रयोग-हुने-मुख्य-कागजात)
+12. [Bug / Defect Life Cycle](#12-bug--defect-life-cycle)
+13. [Severity र Priority](#13-severity-र-priority)
+14. [Test Metrics र Reporting](#14-test-metrics-र-reporting)
+15. [Risk-Based Testing](#15-risk-based-testing)
+16. [Requirement Traceability Matrix (RTM)](#16-requirement-traceability-matrix-rtm)
+17. [Automation Testing र STLC](#17-automation-testing-र-stlc)
+18. [Agile/Scrum मा STLC](#18-agilescrum-मा-stlc)
+19. [Beginner देखि Advanced सम्म अभ्यास योजना](#19-beginner-देखि-advanced-सम्म-अभ्यास-योजना)
+20. [अभ्यास प्रश्न तथा उत्तर](#20-अभ्यास-प्रश्न-तथा-उत्तर)
+21. [Glossary — महत्त्वपूर्ण शब्दावली](#21-glossary--महत्त्वपूर्ण-शब्दावली)
+22. [अन्तिम पुनरावलोकन चेकलिस्ट](#22-अन्तिम-पुनरावलोकन-चेकलिस्ट)
+23. [निष्कर्ष](#निष्कर्ष)
 
 ---
 
